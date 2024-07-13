@@ -10,5 +10,5 @@ FROM mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm
 
 # [Optional] Uncomment if you want to install more global node modules
 RUN su node -c "npm install -g npm@10.8.0"
-RUN sun node -c "yarn global add @graphprotocol/graph-cli"
+RUN su node -c "yarn global add @graphprotocol/graph-cli"
 
