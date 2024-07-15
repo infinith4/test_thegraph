@@ -31,8 +31,6 @@
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "bradlc.vscode-tailwindcss",
-        "Prisma.prisma",
         "esbenp.prettier-vscode"
       ]
     }
