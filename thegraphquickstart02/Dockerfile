@@ -10,5 +10,5 @@ FROM --platform=linux/amd64 mcr.microsoft.com/devcontainers/typescript-node:1-22
 
 # [Optional] Uncomment if you want to install more global node modules
 RUN su node -c "npm install -g npm@10.8.0"
-RUN su node -c "yarn global add @graphprotocol/graph-cli@0.79.2"
+RUN su node -c "npm install -g @graphprotocol/graph-cli@0.80.0"
 

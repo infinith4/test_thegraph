@@ -1,0 +1,26 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Owner01Contract
+    network: sepolia
+    source:
+      address: "0x8a8ac492985c92fe36525a192bf22e44cedf9005"
+      abi: Owner01Contract
+      startBlock: 6431455
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OwnerSet
+      abis:
+        - name: Owner01Contract
+          file: ./abis/Owner01Contract.json
+      eventHandlers:
+        - event: OwnerSet(indexed address,indexed address)
+          handler: handleOwnerSet
+      file: ./src/owner-01-contract.ts
