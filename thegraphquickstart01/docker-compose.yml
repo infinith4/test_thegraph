@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  apps:
+  apps_thegraphquickstart01:
     container_name: test_thegraph-thegraphquickstart01
     build: 
       context: .

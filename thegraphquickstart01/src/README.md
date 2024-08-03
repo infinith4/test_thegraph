@@ -1,3 +1,9 @@
+
+graph init --studio hellothegraph01
+
+----
+
+
 yarn global add @graphprotocol/graph-cli
 
 graph init --studio <SUBGRAPH_SLUG>
@@ -49,3 +55,8 @@ Next steps:
 Make sure to visit the documentation on https://thegraph.com/docs/ for further information.
 
 ```
+
+
+graph auth --studio <DEPLOY_KEY>
+
+graph deploy --studio <SUBGRAPH_SLUG>

@@ -1,0 +1,47 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: fETH
+    network: fantom
+    source:
+      address: "0x658b0c7613e890EE50B8C4BC6A3f41ef411208aD"
+      abi: fETH
+      startBlock: 1413000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - MinterAdded
+        - MinterRemoved
+        - Paused
+        - PauserAdded
+        - PauserRemoved
+        - Transfer
+        - Unpaused
+      abis:
+        - name: fETH
+          file: ./abis/fETH.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: MinterAdded(indexed address)
+          handler: handleMinterAdded
+        - event: MinterRemoved(indexed address)
+          handler: handleMinterRemoved
+        - event: Paused(address)
+          handler: handlePaused
+        - event: PauserAdded(indexed address)
+          handler: handlePauserAdded
+        - event: PauserRemoved(indexed address)
+          handler: handlePauserRemoved
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: Unpaused(address)
+          handler: handleUnpaused
+      file: ./src/f-eth.ts

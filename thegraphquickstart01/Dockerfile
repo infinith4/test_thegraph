@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm
+FROM --platform=linux/amd64 mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
