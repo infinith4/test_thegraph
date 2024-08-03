@@ -1,5 +1,20 @@
 
-graph init --studio hellothegraph01
+
+## Owner01Contract
+
+graph init --studio helloownerthegraph01
+
+
+sepolia
+Contract address
+0x8a8ac492985c92fe36525a192bf22e44cedf9005
+
+https://sepolia.etherscan.io/address/0x8a8ac492985c92fe36525a192bf22e44cedf9005
+
+./sepolia_owner_abi.json
+
+Owner01Contract
+
 
 ----
 
