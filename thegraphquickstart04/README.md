@@ -131,9 +131,9 @@ Queries (HTTP):     https://api.studio.thegraph.com/query/83242/helloownerthegra
 
 ```mermaid
 graph TB
-  On Chain[PunkTransfer Event]-->Subgraph Manifest[subgraph.yaml]
-  Subgraph Manifest-->Subgraph Logic[mappings.ts]
-  Subgraph Logic-->Present Subgraph Data[schemagraphql]
+  OnChain[On Chain: PunkTransfer Event]-->SubgraphManifest[SubgraphManifest: subgraph.yaml]
+  SubgraphManifest-->SubgraphLogic[Subgraph Logic: mappings.ts]
+  SubgraphLogic-->PresentSubgraphData[Present Subgraph Data: schema.graphql]
 ```
 
 
