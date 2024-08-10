@@ -137,3 +137,18 @@ graph TB
 ```
 
 
+
+
+```
+{
+  assigns(first: 5) {
+    id
+    to
+    punkIndex
+    blockNumber
+  }
+  punkOffereds(skip:0 , first: 100){
+    toAddress
+  }
+}
+```
