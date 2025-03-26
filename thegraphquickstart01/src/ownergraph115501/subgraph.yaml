@@ -1,0 +1,83 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ac344dContract
+    network: sepolia
+    source:
+      address: "0xac344d02874336701b2fb7612823997816b1f23e"
+      abi: ac344dContract
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ApprovalForAll
+        - ClaimConditionsUpdated
+        - ContractURIUpdated
+        - DefaultRoyalty
+        - Initialized
+        - MaxTotalSupplyUpdated
+        - OperatorRestriction
+        - OwnerUpdated
+        - PlatformFeeInfoUpdated
+        - PrimarySaleRecipientUpdated
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+        - RoyaltyForToken
+        - SaleRecipientForTokenUpdated
+        - TokensClaimed
+        - TokensLazyMinted
+        - TransferBatch
+        - TransferSingle
+        - URI
+      abis:
+        - name: ac344dContract
+          file: ./abis/ac344dContract.json
+      eventHandlers:
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: ClaimConditionsUpdated(indexed uint256,(uint256,uint256,uint256,uint256,bytes32,uint256,address,string)[],bool)
+          handler: handleClaimConditionsUpdated
+        - event: ContractURIUpdated(string,string)
+          handler: handleContractURIUpdated
+        - event: DefaultRoyalty(indexed address,uint256)
+          handler: handleDefaultRoyalty
+        - event: Initialized(uint8)
+          handler: handleInitialized
+        - event: MaxTotalSupplyUpdated(uint256,uint256)
+          handler: handleMaxTotalSupplyUpdated
+        - event: OperatorRestriction(bool)
+          handler: handleOperatorRestriction
+        - event: OwnerUpdated(indexed address,indexed address)
+          handler: handleOwnerUpdated
+        - event: PlatformFeeInfoUpdated(indexed address,uint256)
+          handler: handlePlatformFeeInfoUpdated
+        - event: PrimarySaleRecipientUpdated(indexed address)
+          handler: handlePrimarySaleRecipientUpdated
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+        - event: RoyaltyForToken(indexed uint256,indexed address,uint256)
+          handler: handleRoyaltyForToken
+        - event: SaleRecipientForTokenUpdated(indexed uint256,address)
+          handler: handleSaleRecipientForTokenUpdated
+        - event: TokensClaimed(indexed uint256,indexed address,indexed address,uint256,uint256)
+          handler: handleTokensClaimed
+        - event: TokensLazyMinted(indexed uint256,uint256,string,bytes)
+          handler: handleTokensLazyMinted
+        - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
+          handler: handleTransferBatch
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+        - event: URI(string,indexed uint256)
+          handler: handleURI
+      file: ./src/ac-344-d-contract.ts

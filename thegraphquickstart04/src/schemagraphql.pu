@@ -1,0 +1,81 @@
+@startuml
+
+class Assign {
+  +Bytes id
+  +Bytes to
+  +BigInt punkIndex
+  +BigInt blockNumber
+  +BigInt blockTimestamp
+  +Bytes transactionHash
+}
+
+class Transfer {
+  +Bytes id
+  +Bytes from
+  +Bytes to
+  +BigInt value
+  +BigInt blockNumber
+  +BigInt blockTimestamp
+  +Bytes transactionHash
+}
+
+class PunkTransfer {
+  +Bytes id
+  +Bytes from
+  +Bytes to
+  +BigInt punkIndex
+  +BigInt blockNumber
+  +BigInt blockTimestamp
+  +Bytes transactionHash
+}
+
+class PunkOffered {
+  +Bytes id
+  +BigInt punkIndex
+  +BigInt minValue
+  +Bytes toAddress
+  +BigInt blockNumber
+  +BigInt blockTimestamp
+  +Bytes transactionHash
+}
+
+class PunkBidEntered {
+  +Bytes id
+  +BigInt punkIndex
+  +BigInt value
+  +Bytes fromAddress
+  +BigInt blockNumber
+  +BigInt blockTimestamp
+  +Bytes transactionHash
+}
+
+class PunkBidWithdrawn {
+  +Bytes id
+  +BigInt punkIndex
+  +BigInt value
+  +Bytes fromAddress
+  +BigInt blockNumber
+  +BigInt blockTimestamp
+  +Bytes transactionHash
+}
+
+class PunkBought {
+  +Bytes id
+  +BigInt punkIndex
+  +BigInt value
+  +Bytes fromAddress
+  +Bytes toAddress
+  +BigInt blockNumber
+  +BigInt blockTimestamp
+  +Bytes transactionHash
+}
+
+class PunkNoLongerForSale {
+  +Bytes id
+  +BigInt punkIndex
+  +BigInt blockNumber
+  +BigInt blockTimestamp
+  +Bytes transactionHash
+}
+
+@enduml

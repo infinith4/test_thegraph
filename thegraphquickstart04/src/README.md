@@ -152,3 +152,35 @@ graph TB
   }
 }
 ```
+
+
+https://note.com/standenglish/n/naec244752596
+
+
+https://gaiax-blockchain.com/how-to-create-subgraph
+
+
+https://smacon.dev/posts/subgraph/
+
+
+
+
+# startBlock を指定する
+
+これを指定しないとコントラクトをデプロイする前のログまで分析してしまうので無駄に時間がかかる。
+
+```
+dataSources > source > startBlock
+```
+
+コード生成する
+
+```
+graph codegen
+```
+
+Subgraph のビルド
+
+```
+graph build
+```
