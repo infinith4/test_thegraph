@@ -65,7 +65,7 @@ export function handleClaimConditionsUpdated(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity.tokenId = event.params.tokenId
-  entity.claimConditions = event.params.claimConditions
+  //entity.claimConditions = event.params.claimConditions
   entity.resetEligibility = event.params.resetEligibility
 
   entity.blockNumber = event.block.number

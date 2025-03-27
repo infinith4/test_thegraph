@@ -60,7 +60,7 @@ thegraph のダッシュボードでsubgraph を作成しておく。
 DEPLOY_KEY を作成したsubgraph: ownergraph01 のdeploy key に置き換える
 
 graph auth --studio <DEPLOY_KEY>
-
+graph auth --studio 567a3656dd818dc2e05f98e494dd3d23
 
 yarn build
 yarn codegen
@@ -69,13 +69,54 @@ yarn deploy
 versionは v0.0.1 とでもしておく。
 
 
+```
+{
+  transferSingles(
+    first: 5
+    orderBy: blockNumber
+    orderDirection: desc
+  ){
+    id
+    blockNumber
+    transactionHash
+    from
+    to
+    ac344dContract_id
+    value
+  }
+  
+  
+  transferBatches(
+    first: 5
+    orderBy: blockNumber
+    orderDirection: desc
+  ){
+    id
+    blockNumber
+    transactionHash
+    from
+    to
+    ids
+  }
+}
+```
 
-graph init \
-  --product subgraph-studio
-  --from-contract 0x658b0c7613e890EE50B8C4BC6A3f41ef411208aD \
-  --network fantom-testnet \
-  --abi ./abi.json \
-  hellothegraph01
 
-
-graph init --contract-name Token --index-events --product subgraph-studio --from-contract 0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7
+```
+{
+  "data": {
+    "transferSingles": [
+      {
+        "id": "0x01227353f5e213a9cdae2b4bf6a1a87a38bc35072d49c9895d72dbe8c84123b108000000",
+        "blockNumber": "6794097",
+        "transactionHash": "0x01227353f5e213a9cdae2b4bf6a1a87a38bc35072d49c9895d72dbe8c84123b1",
+        "from": "0x063977dd3cb791dc0883526c02971615e28bc384",
+        "to": "0x76e32bdb97eae1a7b3b5ca78bc20f521e7250a1c",
+        "ac344dContract_id": "0",
+        "value": "1"
+      }
+    ],
+    "transferBatches": []
+  }
+}
+```
